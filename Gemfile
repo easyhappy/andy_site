@@ -30,8 +30,11 @@ end
 
 # Development requirements
 group :development do
+  gem "pry",                  "0.9.12"
+  gem "pry-nav",              "0.2.2"
+  gem "pry-stack_explorer",   "0.4.9"
   gem 'pry-padrino'
-  gem 'padrino-gen', '~> 0.11'
+  gem 'padrino-gen',          '0.11'
   gem 'thin'
 end
 
