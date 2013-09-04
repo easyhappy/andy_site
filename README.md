@@ -1,7 +1,5 @@
 # Robbin's website  
 
-<http://robbinfan.com>
-
 This is my personal website project.
 
 ## System requirements
