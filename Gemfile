@@ -24,8 +24,9 @@ gem 'rest-client'
 
 # Production requirements
 group :production do
-  gem 'zbatery'
-  # gem 'rainbows'
+  gem 'unicorn',              '4.6.3'
+  #gem 'zbatery' 等unicorn研究明白之后使用 zbatery
+  #gem 'rainbows'
 end
 
 # Development requirements
