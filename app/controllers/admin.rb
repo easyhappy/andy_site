@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-RobbinSite.controllers :admin do
+AndySite.controllers :admin do
   
   before do
     halt 403 unless account_admin?

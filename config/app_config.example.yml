@@ -19,5 +19,5 @@ test:
 
 production:
   <<: *default
-  site_url: 'http://robbinfan.com'
+  site_url: 'http://ml-china.org'
   blog_search_ping: true

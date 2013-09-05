@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'xmlrpc/client'
 
-RobbinSite.helpers do
+AndySite.helpers do
   include Padrino::Cache::Helpers::Fragment
   
   # authentication helpers

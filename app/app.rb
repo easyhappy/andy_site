@@ -1,4 +1,4 @@
-class RobbinSite < Padrino::Application
+class AndySite < Padrino::Application
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
   register Padrino::Rendering
   register Padrino::Helpers

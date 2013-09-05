@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-RobbinSite.controllers do
+AndySite.controllers do
 
   before :login, :weibo_login do
     redirect url(:index) if account_login?

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-RobbinSite.controllers :blog do
+AndySite.controllers :blog do
   
   get :index do
     @blogs = Blog.where(:category => 'blog').order('id DESC').page(params[:page])

@@ -21,7 +21,7 @@ development: &default
 
 test:
   <<: *default
-  database: robbin_site_test
+  database: andy_site_test
 
 production:
   <<: *default

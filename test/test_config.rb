@@ -20,6 +20,6 @@ class MiniTest::Unit::TestCase
     ##
     # You can handle all padrino applications using instead:
     #   Padrino.application
-    RobbinSite.tap { |app|  }
+    AndySite.tap { |app|  }
   end
 end

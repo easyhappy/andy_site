@@ -4,4 +4,4 @@ Padrino.configure_apps do
 end
 
 # Mounts the core application for this project
-Padrino.mount('RobbinSite').to('/')
+Padrino.mount('AndySite').to('/')
