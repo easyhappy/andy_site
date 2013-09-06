@@ -23,8 +23,8 @@ gem 'mini_magick'
 gem 'rest-client'
 
 # Production requirements
+gem 'unicorn',              '4.6.3'
 group :production do
-  gem 'unicorn',              '4.6.3'
   #gem 'zbatery' 等unicorn研究明白之后使用 zbatery
   #gem 'rainbows'
 end
