@@ -12,8 +12,8 @@
 # more will usually help for _short_ waits on databases/caches.
 rails_env = ENV['RAILS_ENV'] || 'production'
 
-puts rails_env
 worker_processes rails_env == "production" ? 9 : 1
+puts rails_env
 
 APP_PATH = '/home/andy/Documents/andy_site'
 
@@ -31,7 +31,7 @@ working_directory "#{APP_PATH}" # available in 0.94.0+
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
 listen "#{APP_PATH}/shared/sockets/unicorn.sock", :backlog => 1024
-listen 8090, tcp_nopush: false, tcp_nodelay: true
+listen 8080, tcp_nopush: false, tcp_nodelay: true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
