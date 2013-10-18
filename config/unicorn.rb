@@ -15,7 +15,7 @@ rails_env = ENV['RAILS_ENV'] || 'production'
 worker_processes rails_env == "production" ? 9 : 1
 puts rails_env
 
-APP_PATH = '/home/andy/Documents/andy_site'
+APP_PATH = '/home/ubuntu/Document/andy_site'
 
 # Since Unicorn is never exposed to outside clients, it does not need to
 # run on the standard HTTP port (80), there is no reason to start Unicorn

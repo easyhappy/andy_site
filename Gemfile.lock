@@ -13,7 +13,7 @@ GIT
       activerecord (~> 3.0)
 
 GEM
-  remote: http://ruby.taobao.org/
+  remote: http://rubygems.org/
   specs:
     activemodel (3.2.14)
       activesupport (= 3.2.14)
@@ -57,7 +57,7 @@ GEM
       subexec (~> 0.2.1)
     mini_portile (0.5.1)
     minitest (2.6.2)
-    multi_json (1.7.9)
+    multi_json (1.8.0)
     mysql2 (0.3.13)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
@@ -92,6 +92,7 @@ GEM
       rack (>= 1.0)
     raindrops (0.12.0)
     rake (10.1.0)
+    rb-readline (0.5.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     sanitize (2.0.6)
@@ -143,6 +144,7 @@ DEPENDENCIES
   pry-stack_explorer (= 0.4.9)
   rack-test
   rake
+  rb-readline
   rest-client
   sanitize
   second_level_cache!
