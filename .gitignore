@@ -12,3 +12,5 @@ vendor/gems/*
 .sass-cache/*
 db/*.db
 .tags
+backup
+baidupan

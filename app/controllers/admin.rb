@@ -138,4 +138,14 @@ AndySite.controllers :admin do
     @comments = BlogComment.order('id DESC').page(params[:page]).per_page(100)
     render 'admin/comments'
   end
+
+  get :backup, :map => 'admin/backup' do
+    @backup = AdminBackup.backup_list
+    render 'admin/backup'
+  end
+
+  post :backup, :map => '/admin/backup' do
+    @backup = AdminBackup.backup
+    render 'admin/backup'
+  end
 end
