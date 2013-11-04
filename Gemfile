@@ -4,9 +4,8 @@ source 'http://rubygems.org'
 # Project requirements
 gem 'rake'
 gem 'tilt', '~> 1.3.7'
-gem 'padrino-core', '~> 0.11'
-gem 'padrino-helpers', '~> 0.11'
-gem 'rb-readline'
+gem 'padrino-core'
+gem 'padrino-helpers'
 
 # Component requirements
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -23,6 +22,9 @@ gem 'sanitize'
 gem 'carrierwave', :require => ['carrierwave', 'carrierwave/orm/activerecord']
 gem 'mini_magick'
 gem 'rest-client'
+gem 'typhoeus'
+gem 'baidupan',             '0.0.8'
+gem 'backup',               '3.4.0'
 
 # Production requirements
 gem 'unicorn',              '4.6.3'

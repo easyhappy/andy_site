@@ -3,4 +3,5 @@
   <%= link_to '查看用户列表', url(:admin, :accounts) %>
   <%= link_to '查看文章列表', url(:admin, :blogs) %>
   <%= link_to '修改用户信息', url(:admin, :edit_profile, :id => current_account) %>
+  <%= link_to '备份列表', url(:admin, :backup), :method => :post %>
 </div>
