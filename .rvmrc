@@ -4,7 +4,7 @@
 # development environment upon cd'ing into the directory
 
 # First we specify our desired <ruby>[@<gemset>], the @gemset name is optional.
-environment_id="ruby-1.9.3-p392@andy_site"
+environment_id="ruby-1.9.3-p448@andy_site"
 
 #
 # Uncomment following line if you want options to be set only for given project.
@@ -35,7 +35,6 @@ else
   fi
 fi
 
-#
 # If you use an RVM gemset file to install a list of gems (*.gems), you can have
 # it be automatically loaded. Uncomment the following and adjust the filename if
 # necessary.
