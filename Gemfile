@@ -22,8 +22,8 @@ gem 'sanitize'
 gem 'carrierwave', :require => ['carrierwave', 'carrierwave/orm/activerecord']
 gem 'mini_magick'
 gem 'rest-client'
-gem 'typhoeus'
-gem 'baidupan',             '0.0.8'
+gem 'typhoeus',             '0.6.6'
+gem 'baidupan'
 gem 'backup',               '3.4.0'
 
 # Production requirements
