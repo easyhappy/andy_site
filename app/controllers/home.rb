@@ -19,12 +19,6 @@ AndySite.controllers do
   get :search do
     render 'home/search'
   end
-  
-  get :rss do
-    content_type :rss
-    @blogs = Blog.order('id DESC').limit(20)
-    render 'home/rss'
-  end
 
   # native authentication
   get :login, :map => '/login' do
