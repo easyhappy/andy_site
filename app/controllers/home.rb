@@ -1,4 +1,5 @@
 # encoding: utf-8
+require 'slim'
 
 AndySite.controllers do
 
@@ -8,7 +9,7 @@ AndySite.controllers do
   
   get :index do
     @blogs = Blog.order('id DESC').page(params[:page])
-    render 'home/index'
+    slim 'home/index'.to_sym
   end
   
   get :weibo do

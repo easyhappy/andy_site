@@ -68,5 +68,4 @@ WillPaginate.per_page = 20
 
 # Set carrierwave sanitize
 CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
-
 Padrino.load!

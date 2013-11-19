@@ -26,6 +26,9 @@ gem 'typhoeus',             '0.6.6'
 gem 'baidupan'
 gem 'backup',               '3.4.0'
 
+#view 模板
+gem 'slim',                 '2.0.2'
+
 # Production requirements
 gem 'unicorn',              '4.6.3'
 group :production do

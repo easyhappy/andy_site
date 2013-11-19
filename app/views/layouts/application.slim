@@ -1,0 +1,24 @@
+doctype html
+
+html[lang="zh-CN"]
+  head
+    = current_page_title(@title)
+    
+    meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0"
+    meta name="description" content=APP_CONFIG['site_description']
+    meta name="author" content="Andy"
+
+    = stylesheet_link_tag 'default/document', 'default/content'
+    = yield_content :stylesheets
+
+  body
+    = current_page_notice
+    = current_page_header
+    = current_page_nav
+
+    .wrap.clearfix
+      = yield
+
+= javascript_include_tag 'jquery', 'jquery-ujs', 'application'
+= yield_content :javascripts

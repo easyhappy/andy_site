@@ -1,0 +1,11 @@
+- @nav = 'home'
+- @title = "#{APP_CONFIG['site_title']} | 第#{params[:page]}页" if params[:page] && params[:page].to_i > 1
+
+.left
+  = partial 'blog/blog', :collection => @blogs
+  div
+    = will_paginate(@blogs, :previous_label => '前一页', :next_label => '后一页')
+
+.right
+  = partial('blog/right')
+  = partial('blog/articles_count', :locals => {:blogs => @blogs})

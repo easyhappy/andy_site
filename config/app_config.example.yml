@@ -13,7 +13,7 @@ development: &default
   weibo_redirect_uri: ''
   weibo_uid: '1654762921'
   weibo_uid_verifier: '6bd0aff2'
-  
+
 test: 
   <<: *default
 
