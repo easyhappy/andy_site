@@ -1,0 +1,17 @@
+.login
+  = form_for @account, url(:login) do |form|
+    = form.error_messages
+    p
+      = form.label :email, :caption => "Email地址"
+      = form.text_field :email
+
+    p
+      = form.label :password, :caption => "输入密码"
+      = form.password_field :password
+
+    p.remember_me
+      = check_box_tag :remember_me, :checked => true
+      = label_tag :remember_me, :caption => "两周内自动登录"
+
+    p
+     = form.submit '', :class => 'login'
