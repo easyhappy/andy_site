@@ -11,7 +11,7 @@ development: &default
   weibo_api_key: '1234567890'
   weibo_api_secret: '1234567890'
   weibo_redirect_uri: ''
-  weibo_uid: '1654762921'
+  weibo_uid: '3197730713'
   weibo_uid_verifier: '6bd0aff2'
 
 test: 

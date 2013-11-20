@@ -32,7 +32,7 @@ AndySite.controllers :blog do
       @blog.content
     when :html then
       @blog.increment_view_count
-      render 'blog/show'
+      slim 'blog/show'.to_sym
     end
   end
   

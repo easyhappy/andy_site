@@ -1,0 +1,12 @@
+- content_for :stylesheets do
+  = stylesheet_link_tag 'default/github', 'hightlight/github.min'
+
+.left
+  .con
+    .content
+      = show_detail_page_about_blog_header(@blog)
+      = show_detail_page_about_blog_tag(@blog)
+      = show_detail_page_about_blog_body(@blog)
+      = show_blog_common_footer(@blog)
+
+      = show_share_to_weibo(@blog)
