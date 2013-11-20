@@ -1,6 +1,7 @@
 .login
   = form_for @account, url(:login) do |form|
     = form.error_messages
+    
     p
       = form.label :email, :caption => "Email地址"
       = form.text_field :email
