@@ -11,7 +11,7 @@ html[lang="zh-CN"]
 
     = stylesheet_link_tag 'default/document', 'default/content'
     = yield_content :stylesheets
-
+    
   body
     = current_page_notice
     = current_page_header
@@ -19,6 +19,5 @@ html[lang="zh-CN"]
 
     .wrap.clearfix
       = yield
-
 = javascript_include_tag 'jquery', 'jquery-ujs', 'application'
 = yield_content :javascripts

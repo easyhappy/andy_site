@@ -10,3 +10,6 @@
       = show_blog_common_footer(@blog)
 
       = show_share_to_weibo(@blog)
+      
+- content_for :javascripts do
+  = javascript_include_tag :weibo_share

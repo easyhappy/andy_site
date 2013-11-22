@@ -16,4 +16,6 @@ if ENV['RACK_ENV'] == 'production'
   use Rack::CommonLogger, logger
 end
 
+use Rack::Coffee, root: 'public', urls: '/javascripts'
+
 run Padrino.application

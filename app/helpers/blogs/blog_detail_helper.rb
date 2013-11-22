@@ -25,8 +25,11 @@ AndySite.helpers do
   def show_share_to_weibo blog
     share_content = (@blog.title + ":" + @blog.content).truncate(120).gsub(/\r|\n/, '')
     
-    content_tag :div, :class => "share clearfix" do
-      content_tag(:span, partial('blog/weibo_share', :locals => {:content => share_content}))
+    contents_tag :div, :class => "share clearfix" do |contents|
+      contents << content_tag(:span, share_content, :class => "share_content display_none")
+      contents << content_tag(:span, APP_CONFIG["weibo_api_key"], :class => 'share_api_key display_none')
+      contents << content_tag(:span, APP_CONFIG["weibo_uid"], :class => 'share_weibo_uid display_none')
+      contents << content_tag(:div, nil, :class => "weibo_share")
     end
   end
 end

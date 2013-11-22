@@ -17,3 +17,6 @@ backup
 baidupan
 .rvmrc
 
+shared
+shared/*
+shared/**/*
