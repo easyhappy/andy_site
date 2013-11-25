@@ -15,7 +15,7 @@ rails_env = ENV['RAILS_ENV'] || 'production'
 worker_processes rails_env == "production" ? 9 : 1
 puts rails_env
 
-APP_PATH = '/home/ubuntu/Document/andy_site'
+APP_PATH = '/home/andy/Documents/andy_site'
 
 # Since Unicorn is never exposed to outside clients, it does not need to
 # run on the standard HTTP port (80), there is no reason to start Unicorn
@@ -31,7 +31,7 @@ working_directory "#{APP_PATH}" # available in 0.94.0+
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
 listen "#{APP_PATH}/shared/sockets/unicorn.sock", :backlog => 1024
-listen 8080, tcp_nopush: false, tcp_nodelay: true
+listen 8099, tcp_nopush: false, tcp_nodelay: true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
@@ -70,6 +70,9 @@ before_fork do |server, worker|
   if old_pid != server.pid
     begin
       sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
+      puts '新的master 已经 启动了...'
+      sleep 10
+      puts '开始kill old master'
       Process.kill(sig, File.read(old_pid).to_i)
     rescue Errno::ENOENT, Errno::ESRCH
     end

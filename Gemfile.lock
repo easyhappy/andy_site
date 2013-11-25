@@ -151,7 +151,7 @@ DEPENDENCIES
   baidupan
   bcrypt-ruby
   carrierwave
-  coffee-script
+  coffee-script (= 2.2.0)
   dalli
   database_cleaner
   erubis (~> 2.7.0)
@@ -168,7 +168,7 @@ DEPENDENCIES
   pry-nav (= 0.2.2)
   pry-padrino
   pry-stack_explorer (= 0.4.9)
-  rack-coffee
+  rack-coffee (= 1.0.2)
   rack-test
   rake
   rest-client
