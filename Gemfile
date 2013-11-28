@@ -25,6 +25,7 @@ gem 'rest-client'
 gem 'typhoeus',             '0.6.6'
 gem 'baidupan'
 gem 'backup',               '3.4.0'
+gem 'rb-readline'
 
 # Production requirements
 gem 'unicorn',              '4.6.3'
