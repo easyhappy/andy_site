@@ -6,12 +6,12 @@ AndySite.controllers do
   before :login, :weibo_login do
     redirect url(:index) if account_login?
   end
-  
+
   get :index do
     @blogs = Blog.order('id DESC').page(params[:page])
     slim 'home/index'.to_sym
   end
-  
+
   get :weibo do
     render 'home/weibo'
   end
@@ -25,10 +25,10 @@ AndySite.controllers do
     @account = Account.new
     render 'home/login'
   end
-  
+
   post :login, :map => '/login' do
     login_tries = APP_CACHE.read("#{CACHE_PREFIX}/login_counter/#{request.ip}")
-    halt 403 if login_tries && login_tries.to_i > 5  # reject ip if login tries is over 5 times
+#    halt 403 if login_tries && login_tries.to_i > 5  # reject ip if login tries is over 5 times
     @account = Account.new(params[:account])
     if login_account = Account.authenticate(@account.email, @account.password)
       session[:account_id] = login_account.id
@@ -65,7 +65,7 @@ AndySite.controllers do
       user_info = auth.get_user_info
       @account = Account.where(:provider => 'weibo', :uid => user_info['id'].to_i).first
       # create commenter account when first weibo login
-      unless @account 
+      unless @account
         @account = Account.create(:provider => 'weibo', :uid => user_info['id'], :name => user_info['screen_name'], :role => 'commenter', :profile_url => user_info['profile_url'], :profile_image_url => user_info['profile_image_url'])
       end
       # update weibo profile if profile is empty

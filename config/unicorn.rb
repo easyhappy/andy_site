@@ -55,7 +55,7 @@ before_fork do |server, worker|
   # the following is highly recomended for Rails + "preload_app true"
   # as there's no need for the master process to hold a connection
   defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.connection.disconnect!
+    #ActiveRecord::Base.connection.disconnect!
 
   # The following is only recommended for memory/DB-constrained
   # installations.  It is not needed if your system can house

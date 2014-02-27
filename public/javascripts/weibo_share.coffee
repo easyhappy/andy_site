@@ -30,7 +30,7 @@ class WeiboShare
     url = share.get_share_url()
     iframe_url = '<iframe allowTransparency="true" frameborder="0" scrolling="no" src="'+url+'"></iframe>'
     
-    $('.weibo_share').html(iframe_url)
-
+    $('.share').html(iframe_url)
+    document.getElementById("myframe").document.write('<link rel="stylesheet" type="text/css" href="/stylesheets/weibo_share.css">');
 
 WeiboShare.generate_share_iframe()
