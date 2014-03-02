@@ -28,7 +28,6 @@ gem 'backup',               '3.4.0'
 
 #view 模板
 gem 'slim',                 '2.0.2'
-gem 'showbuilder'
 gem 'coffee-script',        '2.2.0'
 gem 'rack-coffee',          '1.0.2'
 
