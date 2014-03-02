@@ -16,6 +16,23 @@ AndySite.helpers do
     end
   end
 
+  def show_tag_cloud
+    content_tag :div, :class => "con" do
+      content_tag :div, :class => 'tag_list' do
+        contents_tag :ul, :class => "clearfix" do |contents|
+          Blog.cached_tag_cloud.each do |tag|
+            contents << contents_tag(:li)do|cs|
+              cs << link_to("<span>#{tag.name}</span> ".html_safe, url(:blog, :tag, :name => tag.name), :class => 'tag')
+              cs << " X "
+              cs << content_tag(:span, tag.count)
+            end
+          end
+          contents.flatten!
+        end
+      end
+    end
+  end
+
   private
 
   def show_blog_detail_about_tag blog

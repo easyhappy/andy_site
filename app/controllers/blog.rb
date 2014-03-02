@@ -9,7 +9,7 @@ AndySite.controllers :blog do
   
   get :note, :map => '/note' do
     @blogs = Blog.where(:category => 'note').order('content_updated_at DESC').page(params[:page])
-    render 'blog/note'
+    render 'blog/index'
   end
 
   get :tag_cloud, :map => '/tag' do
@@ -18,10 +18,11 @@ AndySite.controllers :blog do
   
   get :tag, :map => '/tag/:name' do
     @blogs = Blog.tagged_with(params[:name]).order('content_updated_at DESC').page(params[:page])
+    @title_name = "Tag: #{params[:name]}"
     if @blogs.blank?
       halt 404      
     else
-      render 'blog/tag'      
+      render 'blog/index'      
     end
   end
   
