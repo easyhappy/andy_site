@@ -1,3 +1,4 @@
+# encoding: utf-8
 AndySite.helpers do
   def blog_common_management(blog)
     return unless account_admin?

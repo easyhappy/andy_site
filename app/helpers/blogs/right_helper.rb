@@ -1,3 +1,4 @@
+# encoding: utf-8
 AndySite.helpers do
   def hot_blogs
     contents_tag :div, :class => :hot_blog do |contents|
