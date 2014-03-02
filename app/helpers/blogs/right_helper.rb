@@ -15,22 +15,4 @@ AndySite.helpers do
       end
     end
   end
-
-  def recent_comments
-    contents_tag :ul, :class => "comment" do |contents|
-      BlogComment.order('id DESC').limit(5).each do |comment|
-        contents << recent_comments_part(comment)
-      end
-    end 
-  end
-
-  private
-  
-  def recent_comments_part comment
-    contents_tag :li do |contents|
-      contents << content_tag(:div, "#{comment.brief_content}...")
-      contents << "#{comment.account.name}评论了: "
-      contents << link_to(comment.blog.title, blog_url(comment.blog), :anchor => 'comments')
-    end
-  end
 end
