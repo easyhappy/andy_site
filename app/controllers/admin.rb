@@ -59,12 +59,6 @@ AndySite.controllers :admin do
     redirect url(:index)
   end
 
-  delete :comment, :map => '/admin/comment/:id' do
-    content_type :js
-    comment = BlogComment.find params[:id]
-    comment.destroy
-    "$('tr#comment_#{comment.id}').fadeOut('slow', function(){ $(this).remove();});"
-  end
 
   # attachment related routes: upload, show, delete attachment...
   get :new_attachment, :map => '/admin/attachment/new' do
