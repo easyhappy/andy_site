@@ -1,4 +1,7 @@
 = partial 'admin/menu'
+.left
+  = link_to '添加时光机', url(:admin, :add_axis), :method => :get
+  
 .publish
   .con
     table.admin
@@ -22,5 +25,4 @@
               = link_to 'delete', url(:admin, :delete_axis, :id => axis.id), :method => :delete
             td
               = link_to 'edit', url(:admin, :edit_axis, :id => axis.id)
-    .right
-      = link_to '添加时光机', url(:admin, :add_axis), :method => :get
+

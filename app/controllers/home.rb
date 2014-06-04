@@ -85,5 +85,10 @@ AndySite.controllers do
       STDERR.puts e.backtrace.join("\n")
       halt 401, "授权失败，请重试几次"
     end
+
+  end
+  
+  get :me, :map => 'me' do
+    render 'me', :layout => false
   end
 end
