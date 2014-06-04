@@ -1,0 +1,13 @@
+= partial 'admin/menu'
+.publish
+  .con
+    p
+      = form_for @axis, url(:admin, :axis) do |form|
+        = common_field   form, :title
+        = common_field   form, :year
+        = common_field   form, :date
+        = common_field   form, :color, :check_box
+        = common_field   form, :showable, :check_box
+        = common_field   form, :position
+        = common_field   form, :items, :text_area
+        = form.submit     '', :class => 'submit center'

@@ -1,4 +1,4 @@
-@charset "utf-8";
+zz@charset "utf-8";
 
 /*heard*/
 body{ background:#bebebe url("/images/bg.png");}
@@ -338,4 +338,11 @@ MEDIA QUERIES
 
 .display_none{
   display: none;
+}
+.center{
+  margin-left: 40%;
+}
+.common_wrap{
+  max-width: 795px;
+  margin: 0 auto;
 }

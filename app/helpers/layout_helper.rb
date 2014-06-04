@@ -33,6 +33,16 @@ AndySite.helpers do
     end
   end
 
+  def common_field form, attr, type=:text_field, br_count=1
+    contents_tag :div, :class => :common_wrap do |contents|
+      contents << form.label(attr)
+      contents << form.send(type, attr)
+      br_count.times.each do |index|
+        contents << content_tag(:br)
+      end
+    end
+  end
+
   private
 
   def current_page_nav_about_search_form

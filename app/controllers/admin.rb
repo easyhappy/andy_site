@@ -150,6 +150,11 @@ AndySite.controllers :admin do
 
   get :add_axis, :map => 'admin/add_axis' do
     @axis = TimeAxis.new
-    render 'admin/new_axis'
+    render 'admin/axis'
+  end
+
+  post :axis, :map => 'admin/axis' do
+    TimeAxis.create(params[:time_axis])
+    redirect_to url(:admin, :time_axes)
   end
 end
