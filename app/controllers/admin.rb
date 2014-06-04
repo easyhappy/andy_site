@@ -15,7 +15,7 @@ AndySite.controllers :admin do
     @blog = Blog.new
     @blog.category = 'blog'
     @attachments = current_account.attachments.orphan
-    render 'admin/new_blog'
+    render 'admin/new_blog', :layout => :common
   end
   
   post :blog, :map => '/admin/blog' do
@@ -141,5 +141,15 @@ AndySite.controllers :admin do
   post :backup, :map => '/admin/backup' do
     @backup = AdminBackup.backup
     render 'admin/backup'
+  end
+
+  get :time_axes, :map => 'admin/time_axes' do
+    @axes = TimeAxis.all
+    render 'admin/time_axes'
+  end
+
+  get :add_axis, :map => 'admin/add_axis' do
+    @axis = TimeAxis.new
+    render 'admin/new_axis'
   end
 end

@@ -1,0 +1,8 @@
+= partial 'admin/menu'
+.publish
+  .con
+    p
+      - @axes.each do |axis|
+        - axis.title
+    p.right
+      = link_to '添加时光机', url(:admin, :add_axis), :method => :get

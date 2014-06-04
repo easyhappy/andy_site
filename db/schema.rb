@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 16) do
+ActiveRecord::Schema.define(:version => 18) do
 
   create_table "accounts", :force => true do |t|
-    t.string   "name"
+    t.string   "name",                                           :null => false
     t.string   "email"
     t.string   "crypted_password"
     t.string   "role"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 16) do
   create_table "blog_comments", :force => true do |t|
     t.integer  "account_id"
     t.integer  "blog_id"
-    t.text     "content"
+    t.text     "content",    :null => false
     t.datetime "created_at"
   end
 
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 16) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title",                                              :null => false
-    t.string   "slug_url"
+    t.string   "slug_url",                                           :null => false
     t.integer  "view_count",                       :default => 0,    :null => false
     t.integer  "blog_content_id",                                    :null => false
     t.datetime "created_at",                                         :null => false
@@ -83,7 +83,27 @@ ActiveRecord::Schema.define(:version => 16) do
   add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
-    t.string "name"
+    t.string "name", :null => false
+  end
+
+  create_table "time_axes", :force => true do |t|
+    t.string  "year"
+    t.string  "date"
+    t.string  "title"
+    t.integer "position"
+    t.text    "items"
+    t.boolean "color"
+    t.boolean "showable"
+  end
+
+  create_table "time_axises", :force => true do |t|
+    t.string  "year"
+    t.string  "date"
+    t.string  "title"
+    t.integer "position"
+    t.text    "items"
+    t.boolean "color"
+    t.boolean "showable"
   end
 
 end
