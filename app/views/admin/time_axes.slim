@@ -1,7 +1,26 @@
 = partial 'admin/menu'
 .publish
   .con
-    - @axes.each do |axis|
-      = axis.title
+    table.admin
+      thead
+        - items = %w(title year date items color showable position) 
+        tr
+          - items.each do |item|
+           td
+             = item
+          td
+            = 'delete'
+          td
+            = 'edit'
+      tbody
+        - @axes.each do |axis|
+          tr
+            - items.each do |item|
+              td
+                = axis.send(item).to_s[0..5]
+            td
+              = link_to 'delete', url(:admin, :delete_axis, :id => axis.id), :method => :delete
+            td
+              = link_to 'edit', url(:admin, :edit_axis, :id => axis.id)
     .right
       = link_to '添加时光机', url(:admin, :add_axis), :method => :get

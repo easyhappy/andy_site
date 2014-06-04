@@ -157,4 +157,14 @@ AndySite.controllers :admin do
     TimeAxis.create(params[:time_axis])
     redirect_to url(:admin, :time_axes)
   end
+
+  get :edit_axis, :map => 'admin/edit_axis' do
+    @axis = TimeAxis.find params[:id]
+    render 'admin/axis'
+  end
+
+  delete :delete_axis, :map => "admin/delete_axis" do
+    TimeAxis.delete params[:id]
+    redirect_to url(:admin, :time_axes)
+  end
 end
