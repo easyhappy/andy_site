@@ -89,6 +89,7 @@ AndySite.controllers do
   end
   
   get :me, :map => 'me' do
+    @axes = TimeAxis.axes
     render 'me', :layout => false
   end
 end

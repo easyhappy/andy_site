@@ -16,39 +16,23 @@ html[lang="zh"]
         .main
           h1.title
             | 我的时光机
-          .year
-            h2
-              a[href="#"]
-                | 2014年
-                i
-            .list
-              ul
-                li.cls.highlight
-                  p.date
-                    | 3月26日
-                  p.intro
-                    | 微俱聚硬件微美图正式推出
-                  p.version
-                    |  
-                  .more
-                    p
-                      | 首创微信集商务、娱乐一体化多媒体智能终端机微美图打印机
-                    p
-                      | 营销推广活动支持导入SN码
-                    p
-                      | 微商城模板，支持分类列表
-                    p
-                      | 微商城完整支持微信支付
-                    p
-                      | 微商城数据统计显示顺序更正
-                    p
-                      | 微商城支持商品预览
-                    p
-                      | 微商城订单成功后，网页将收到新订单通知
-                    p
-                      | 幸运机活动时间延长至三个月等6个改进及Bug
-    .footer
-      .footer-content.clearfix
-        .copyright
-          |  Copyright © 2011-2014 All Rights Reserved 
+          - @axes.each do |year, as|
+            div.year
+              h2
+                a[href="#"]
+                  = "#{year}年"
+                  i
+              .list
+                ul
+                  - as.each do |axis|
+                    li.cls class="#{'highlight' if axis.color}"
+                      p.date
+                        = axis.date
+                      p.intro
+                        = axis.title
+                      p.version
+                        |  
+                      .more
+                        p
+                          = axis.items
     = javascript_include_tag 'jquery', 'application'
