@@ -96,14 +96,4 @@ ActiveRecord::Schema.define(:version => 18) do
     t.boolean "showable"
   end
 
-  create_table "time_axises", :force => true do |t|
-    t.string  "year"
-    t.string  "date"
-    t.string  "title"
-    t.integer "position"
-    t.text    "items"
-    t.boolean "color"
-    t.boolean "showable"
-  end
-
 end
