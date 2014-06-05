@@ -44,4 +44,9 @@ AndySite.helpers do
     contents = contents.html_safe if contents.respond_to?(:html_safe)
     contents
   end
+
+  def form_for(object, url, settings={}, &block)
+    settings[:method] = :put unless object.new_record?
+    super object, url, settings, &block
+  end
 end

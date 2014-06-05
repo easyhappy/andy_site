@@ -15,7 +15,7 @@ AndySite.controllers :admin do
     @blog = Blog.new
     @blog.category = 'blog'
     @attachments = current_account.attachments.orphan
-    render 'admin/new_blog', :layout => :common
+    render 'admin/blog', :layout => :common
   end
   
   post :blog, :map => '/admin/blog' do
@@ -27,7 +27,7 @@ AndySite.controllers :admin do
       flash[:notice] = '文章成功发布'
       redirect url(:blog, :show, :id => @blog.id)
     else
-      render 'admin/new_blog'
+      render 'admin/blog'
     end
   end
 
@@ -38,7 +38,7 @@ AndySite.controllers :admin do
   get :edit_blog, :map => '/admin/blog/:id/edit' do
     @blog = Blog.find params[:id].to_i
     @attachments = current_account.attachments.where(:blog_id => [nil, @blog.id]).order('id ASC')
-    render 'admin/edit_blog'
+    render 'admin/blog', :layout => :common
   end
   
   put :blog, :map => '/admin/blog/:id' do
@@ -48,7 +48,7 @@ AndySite.controllers :admin do
       flash[:notice] = '文章修改完成'
       redirect url(:blog, :show, :id => @blog.id)
     else
-      render 'admin/edit_blog'
+      render 'admin/blog'
     end
   end
   
@@ -133,7 +133,7 @@ AndySite.controllers :admin do
     render 'admin/comments'
   end
 
-  get :backup, :map => 'admin/backup' do
+  get :backup, :map => '/admin/backup' do
     @backup = AdminBackup.backup_list
     render 'admin/backup'
   end
@@ -143,27 +143,32 @@ AndySite.controllers :admin do
     render 'admin/backup'
   end
 
-  get :time_axes, :map => 'admin/time_axes' do
+  get :time_axes, :map => '/admin/time_axes' do
     @axes = TimeAxis.all
     render 'admin/time_axes'
   end
 
-  get :add_axis, :map => 'admin/add_axis' do
+  get :add_axis, :map => '/admin/add_axis' do
     @axis = TimeAxis.new
     render 'admin/axis'
   end
 
-  post :axis, :map => 'admin/axis' do
+  post :axis, :map => '/admin/axis' do
     TimeAxis.create(params[:time_axis])
     redirect_to url(:admin, :time_axes)
   end
 
-  get :edit_axis, :map => 'admin/edit_axis' do
+  get :edit_axis, :map => '/admin/edit_axis' do
     @axis = TimeAxis.find params[:id]
     render 'admin/axis'
   end
 
-  delete :delete_axis, :map => "admin/delete_axis" do
+  put :axis, :map => '/admin/axis/:id' do
+    TimeAxis.find(params[:id]).update_attributes(params[:time_axis])
+    redirect_to url(:admin, :time_axes)
+  end
+
+  delete :delete_axis, :map => "/admin/delete_axis" do
     TimeAxis.delete params[:id]
     redirect_to url(:admin, :time_axes)
   end

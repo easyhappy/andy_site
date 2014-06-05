@@ -2,7 +2,8 @@
 .publish
   .con
     p
-      = form_for @axis, url(:admin, :axis) do |form|
+      - u = url(:admin, :axis, :id => @axis.id)
+      = form_for @axis, u do |form|
         = common_field   form, :title
         = common_field   form, :year
         = common_field   form, :date
