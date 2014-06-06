@@ -63,7 +63,7 @@ AndySite.helpers do
       contents << content_tag(:li, link_to('博客', url('/blog')))
       contents << content_tag(:li, link_to('笔记', url('/note')))
       contents << content_tag(:li, link_to('分类', url('/tag')))
-      contents << content_tag(:li, link_to('关于', url('/me'), :target => '_blank'))
+      contents << content_tag(:li, link_to('时光机', url('/me'), :target => '_blank'))
     end
   end
 
