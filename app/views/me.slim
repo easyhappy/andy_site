@@ -16,8 +16,9 @@ html[lang="zh"]
         .main
           h1.title
             | 我的时光机
+          - first = true
           - @axes.each do |year, as|
-            div.year
+            div.year class="#{ 'close' unless first}"
               h2
                 a[href="#"]
                   = "#{year}年"
@@ -35,4 +36,5 @@ html[lang="zh"]
                       .more
                         p
                           = axis.items.gsub("\r\n", '<br>').html_safe
+            - first = false
     = javascript_include_tag 'jquery', 'application'
