@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 18) do
+ActiveRecord::Schema.define(:version => 19) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -68,6 +68,14 @@ ActiveRecord::Schema.define(:version => 18) do
 
   add_index "blogs", ["account_id"], :name => "index_blogs_on_account_id"
   add_index "blogs", ["content_updated_at"], :name => "index_blogs_on_content_updated_at"
+
+  create_table "pictures", :force => true do |t|
+    t.string   "caption"
+    t.string   "image"
+    t.string   "md5"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
