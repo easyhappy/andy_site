@@ -5,6 +5,7 @@ tmp/**/*
 bin/*
 .bundle/
 config/database.yml
+config/initializers/carrierwave.rb
 config/app_config.yml
 public/uploads
 vendor/gems/*

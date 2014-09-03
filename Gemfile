@@ -25,6 +25,7 @@ gem 'rest-client'
 gem 'typhoeus',             '0.6.6'
 gem 'baidupan'
 gem 'backup',               '3.4.0'
+gem 'carrierwave-qiniu'
 
 #view 模板
 gem 'slim',                 '2.0.2'
