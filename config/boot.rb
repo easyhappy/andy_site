@@ -6,7 +6,7 @@ PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, PADRINO_ENV)
-require './config/initializers/carrierwave'
+#require './config/initializers/carrierwave'
 
 ##
 # ## Enable devel logging

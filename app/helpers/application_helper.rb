@@ -61,6 +61,12 @@ AndySite.helpers do
       "<span class='blog_icon' title='博客文章'></span>".html_safe
     end
   end
+
+  def  test_div
+    content_tag :p do
+      "也是"
+    end
+  end
   
   # blog search ping for SEO purpose
   def ping_search_engine(blog)
