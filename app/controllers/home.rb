@@ -12,6 +12,10 @@ AndySite.controllers do
     slim 'home/index'.to_sym
   end
 
+  get :privacy do
+    render "home/privacy"
+  end
+
   get :weibo do
     render 'home/weibo'
   end
